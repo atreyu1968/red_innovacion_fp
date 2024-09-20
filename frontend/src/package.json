@@ -1,18 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import { BrowserRouter } from 'react-router-dom';
-import { AuthProvider } from './context/AuthContext';  // Proveedor de autenticación
+import './index.css';  // Importar estilos globales
+import App from './App';  // Importar el componente App principal
+import { BrowserRouter } from 'react-router-dom';  // Importar el enrutador
 
+// Renderizar la aplicación dentro de un Router
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <AuthProvider>
-        <App />
-      </AuthProvider>
+      <App />
     </BrowserRouter>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root')  // Montar la aplicación en el elemento con id 'root'
 );
-
