@@ -20,5 +20,5 @@ EXPOSE 8000
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 
 # Se inicie el contenedor y se aplique la migración de la base de datos
-COPY /backend/init_setup.sh /app/init_setup.sh
+COPY ./backend/init_setup.sh /app/init_setup.sh
 RUN chmod +x /app/init_setup.sh
