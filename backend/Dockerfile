@@ -5,7 +5,7 @@ FROM python:3.9-slim
 WORKDIR /app
 
 # Copiar el archivo de dependencias (requirements.txt) al contenedor
-COPY requirements.txt .
+COPY ./requirements.txt .
 
 # Instalar las dependencias de Python
 RUN pip install --no-cache-dir -r requirements.txt
