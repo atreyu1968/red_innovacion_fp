@@ -16,11 +16,10 @@ services:
       - app-network
     restart: always
 
- web:
-  build:
-    context: .
-    dockerfile: ./backend/Dockerfile
-    build: ./backend
+  web:
+    build:
+      context: .
+      dockerfile: ./backend/Dockerfile
     container_name: django-app
     command: /app/init_setup.sh python manage.py runserver 0.0.0.0:8000
     environment:
