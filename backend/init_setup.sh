@@ -4,7 +4,7 @@
 echo "Esperando a que la base de datos se inicie..."
 until python manage.py migrate --noinput; do
   >&2 echo "Postgres no está disponible - reintentando..."
-  sleep 2
+  sleep 5  # Aumentar el tiempo de espera para evitar un bucle rápido
 done
 
 # Aplicar migraciones
@@ -20,5 +20,6 @@ if not User.objects.filter(username='admin').exists():
     User.objects.create_superuser('admin', 'admin@example.com', 'admin123')
 "
 
-# Ejecutar el servidor
+# Iniciar el servidor
+echo "Iniciando el servidor..."
 exec "$@"
